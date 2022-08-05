@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import axios from "axios";
 const Standings = () => {
@@ -75,18 +75,17 @@ const Standings = () => {
 
       <div className="Standing-results">
         {loading ? (
-        //   <Loader type="Circles" color="#00BFFF" height={80} width={80} />
-        <div>Loader</div>
+         <Loader type="Circles" color="#00BFFF" height={80} width={80} />
         ) : (
           data?.map((data, index) => (
-            <div key={index} className="standing-info-div">
+            <div key={index} className="ranking-div-inner">
               <h1>
                 <span>
                   {`${index + 1}.`}
                   <img
                     src={data.team.logos[0]?.href}
                     alt="#"
-                    style={{ width: "30px" }}
+                    className="logo-small"
                   />
                 </span>{" "}
                 {data.team.shortDisplayName}
